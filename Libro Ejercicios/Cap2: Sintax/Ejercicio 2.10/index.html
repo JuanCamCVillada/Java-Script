@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadro de Asteriscos</title>
+</head>
+<body>
+    <!-- Ejercicio 2.10: Pintar un cuadro de Asteriscos de 5 por cada lado -->
+    <p id="capa"></p>
+
+    <script>
+        let cuadro = ""; // Variable para almacenar el cuadro de asteriscos
+        
+        // Bucle para las filas
+        for (let i = 0; i < 5; i++) {
+            // Bucle para las columnas
+            for (let j = 0; j < 5; j++) {
+                cuadro += "* "; // Agregar un asterisco y un espacio
+            }
+            cuadro += "<br>"; // Saltar a la siguiente línea después de cada fila
+        }
+        
+        // Mostrar el cuadro en el elemento con id="capa"
+        document.getElementById("capa").innerHTML = cuadro;
+    </script>
+</body>
+</html>

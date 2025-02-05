@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Imágenes</title>
+    <script>
+        function selectImg() {
+            const nombreImagen = document.getElementById("option").value; // Obtener valor del select
+            console.log("Imagen seleccionada:", nombreImagen);
+
+            // Actualizar la imagen
+            document.getElementById("imagen").src = `./img /${nombreImagen}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Selecciona una Imagen</h2>
+
+    <!-- Imagen que se actualizará -->
+    <img id="imagen" src="./img /img1.jpeg" alt="Imagen seleccionada" width="300"><br><br>
+
+    <!-- Selector de imágenes -->
+    <label for="option">Selecciona una Imagen:</label><br>
+    <select name="option" id="option" onchange="selectImg()">
+        <option value="img1.jpeg">Bosque</option>
+        <option value="img2.jpeg">Desierto</option>
+        <option value="img3.jpeg">Ventana</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1.5</title>
+    <script>
+        function nuevoEstilo() {
+           const capa = document.getElementById("capa");
+           const estilo = document.querySelector("[name='estilo']").value;
+           capa.style.fontStyle = estilo;
+        }
+
+        function nuevaPropiedad() {
+            const capa = document.getElementById("capa");
+            const propiedad = document.querySelector("[name = 'propiedad']").value;
+            capa.style.fontWeight = propiedad;
+        }
+    </script>
+</head>
+<body>
+    <!-- Ejercicio 1.5 
+        Crear una página con un texto y dos listas desplegables: 
+        una indica si el texto se pone en negrita o no, 
+        y la otra si el texto se pone en cursiva o no.    
+    -->
+
+    <div id="capa">Este Texto Va a Cambiar</div>
+
+    <label for="estilo">Selecciona el Estilo</label>
+    <select name="estilo" onchange="nuevoEstilo()">
+        <option value="normal">Normal</option>
+        <option value="italic">Cursiva</option>
+    </select><br><br>
+
+    <label for="propiedad">Selecciona la Propiedad</label>
+    <select name="propiedad" onchange="nuevaPropiedad()">
+        <option value="bold">Negrita</option>
+        <option value="normal">Sin Negrita</option>
+    </select>
+</body>
+</html>
