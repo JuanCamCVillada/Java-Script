@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function imprimirConsole(){
+            color = document.getElementById("idColor").value;
+            console.log(color);
+        }
+    </script>
+</head>
+<body>
+    <!-- Ejercicio 1.2
+        Seleccionar de una Lista plegada un color y mostrarlo por la consola 
+    -->
+    <h1>Selecciona un color y se mostrara por consola</h1>
+
+    <label for="menu">Selecciona un Color</label><br>
+    <select name="menu" id="idColor" onchange="imprimirConsole()">
+        <option value="Red">Rojo</option>
+        <option value="Green">Verde</option>
+        <option value="Blue">Azul</option>
+    </select>
+
+</body>
+</html>
