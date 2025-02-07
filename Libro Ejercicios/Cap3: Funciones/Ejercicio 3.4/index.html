@@ -17,14 +17,44 @@
         Contar Palabras 
     </h1>
     <form action="">
-        <textarea name="" id=""></textarea>
-        <button>Cuenta</button>
+        <textarea name="" id="textArea"></textarea>
     </form>
 
-    <p class="caracteres"></p>
-    <p class="palabras"></p>
-    <p class="sinEspac"></p>
-    <p class="Numeros"></p>
+    <button type="button" onclick="contador()">Cuenta</button>
 
+    <p id="caracteres"></p>
+    <p id="palabras"></p>
+    <p id="sinEspac"></p>
+    <p id="numeros"></p>
+
+    <script>
+        function contador(){
+            var texto = document.getElementById("textArea").value;
+
+            // Contamos los Caracteres.
+            let caracteres = texto.length;
+
+            // LLenamos el HTML 
+            document.getElementById("caracteres").innerHTML = "Caracteres: " + caracteres;
+
+            // Contamos las Palabras 
+            let palabras = texto.split(" ").length;
+
+            // llenamos el HTML 
+            document.getElementById("palabras").innerHTML = "Palabras: " + palabras;
+
+
+            // Caracteres sin Espacio. 
+
+            let caracterSinEspacio = texto.replace(/\s/g, " ").length; 
+
+            document.getElementById("sinEspac").innerHTML = "Carateres Sin espacio: " + caracterSinEspacio;
+
+            // numeros
+            let numeros = texto.match(/\d+/g)
+            
+            document.getElementById("numeros").innerHTML = "Numeros: " + numeros;
+        }
+    </script>
 </body>
 </html>
