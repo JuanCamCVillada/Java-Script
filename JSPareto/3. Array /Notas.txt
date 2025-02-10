@@ -1,0 +1,78 @@
+Array: 
+
+Un array es una lista que puede contener varios valores. 
+
+let frutas = ["Arandanos", "Durazno", "Mango"];
+
+para acceder al inidce usamos: 
+frutas[0] // "Arandanos"
+
+podemos rea asignar valores: 
+frutas[0] = "peach"
+
+Metodos Claves en los Array:--------------
+
+RECORRER UN ARRAY: 
+.forEach()----- Mostrar datos por pantalla o recorrer 
+
+ejecuta una funcion en cada elemento del array 
+
+let numeros = [1, 2, 3]
+
+numeros.forEach((numero) => {
+    console.log(numero*2)
+})
+
+
+CREAR UN NUEVO ARRAY: 
+.map()----- Cuando queremos cambiar datos sin modificar el original. 
+Devuelve un array transfomado: 
+
+    let edades = [15, 20, 25, 30];
+
+    let edadesFuturas = edades.map((edad) =>  edad + 5)
+
+    // edadesFuturas //[20, 25, 30, 40]
+
+
+FILTRAR ELEMENTOS DE UN ARRAY: 
+.filter() ----- devuelve el nuevo array con los elementos que cumplen. 
+
+let precios = [100, 200, 300, 400, 500];
+
+let preciosAltos = precios.filter((precios) => precio > 250);
+
+console.log(preciosAltos)  // // [300, 400, 500]
+
+
+REDUCIR UN ARRAY A UN SOLO VALOR: Sumar precios, contar elementos, calcular promedios.
+
+.reduce() ----- sirve para acomular datos en una sola salida. 
+
+let ventas = [100, 200, 300]
+
+let totalVentas = ventas.reduce((acumulador, venta) => acumulador + venta, 0);
+
+console.log(totalVentas);  // 600
+
+EJERCICIOS----------------------------------------
+
+✏️ Ejercicio 1: Recorrer un array con forEach()
+
+Crea un array nombres con 3 nombres.
+Usa forEach() para imprimir cada nombre.
+
+✏️ Ejercicio 2: Crear un nuevo array con map()
+
+Crea un array numeros con [2, 4, 6, 8].
+Usa map() para crear un nuevo array cuadrados con cada número elevado al cuadrado.
+
+✏️ Ejercicio 3: Filtrar datos con filter()
+
+Crea un array edades con [12, 18, 25, 30, 16].
+Usa filter() para obtener solo las edades mayores o iguales a 18.
+
+✏️ Ejercicio 4: Usar reduce() para sumar valores
+
+Crea un array gastos con [500, 1500, 3000].
+Usa reduce() para calcular el total de gastos.
