@@ -1,0 +1,60 @@
+Funciones:
+Una funacion es un bloque de codigo que podemos Re-Utilizar cuando queramos.
+
+como se define: 
+
+Tradicional: 
+    function saludar(){
+        console.log("Hola Camii");
+    }
+
+    llamar la funcion:
+        saludar();
+
+Funcion Flecha:
+    const despedir = () =>{
+        console.log("Hasta Luego W");
+    }
+    tambien se llama con parentesis 
+    despedir();
+
+Parametros y Argumentos: -----------------
+
+    funcion saludar(nombre){
+        console.log(`Hola ${nombre} !`)
+    }
+
+Tambien se pasan parametros a las funciones flecha:
+
+si la funcion tiene una sola linea se puede escribir de esta manera:
+
+    const multiplicar = (a, b) => a*b;
+
+Ejercicios -------------------------------
+
+✏️ Ejercicio 1: Crear una función simple
+
+Crea una función llamada mostrarMensaje que imprima "JavaScript es increíble!".
+
+Llama a la función para que se ejecute.
+
+
+✏️ Ejercicio 2: Función con parámetros
+
+Crea una función llamada presentar que reciba nombre y edad.
+
+La función debe imprimir algo como: "Hola, mi nombre es Juan y tengo 25 años."
+
+Llama a la función con distintos valores.
+
+
+✏️ Ejercicio 3: Función que retorna un valor
+
+Crea una función llamada doblarNumero que reciba un número y lo devuelva multiplicado por 2.
+
+Guarda el resultado en una variable y muéstralo en la consola.
+
+
+✏️ Ejercicio 4: Función Flecha
+
+Convierte la función doblarNumero en una función flecha.

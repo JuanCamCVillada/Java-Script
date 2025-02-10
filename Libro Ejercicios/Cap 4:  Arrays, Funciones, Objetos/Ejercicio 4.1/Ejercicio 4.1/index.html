@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejercicio 4.1 
+    Dada una lista de numeros separados por , calcular la suma, el mayor, el menor y la media de todos.  
+    -->
+    <div>
+        <label for="" >Introducir numero enteros, separados por comas</label><br>
+        <input type="text" id="miInput" placeholder="1, 2, 3...">
+        <br> <br>
+        <button onclick="arrayFuntion()">Enviar</button>
+        <br><br>
+        <p id="suma"></p>
+        <p id="mayor"></p>
+        <p id="menor"></p>
+        <p id="media"></p>
+    </div>
+
+    <script>
+        function arrayFuntion(){
+            let valor  = document.getElementById("miInput").value;
+
+            console.log(valor)
+
+            let array = valor.split(",");
+
+            console.log(array);
+
+            let numeros = [];
+
+            for (let i = 0; i < array.length; i++) {
+                let num = Number(array[i].trim());  
+                
+                if (isNaN(num)) {
+                    alert("Por favor, introduce solo números.");
+                    return;
+                }
+                numeros.push(num);
+            }
+
+            console.log(numeros);
+            //Suma 
+        }
+    </script>
+</body>
+</html>

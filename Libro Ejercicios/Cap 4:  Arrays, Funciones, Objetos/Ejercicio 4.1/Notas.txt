@@ -1,0 +1,129 @@
+Declaracion de Array 
+
+let array = [1, 2, 3, 4, 5];
+
+.length (la cantidad de elementos)
+[0] elemento pos 
+.at(pos) devuelve la posicion
+
+let personas = new Array(40)
+
+Añadir o eliminar -----------------------
+
+.push(6, 7) añade uno o varios elementos al final
+
+.pop() devuelve el ultimo elemento y lo elimina
+
+.shift() devuelce el primer elemento y lo elimina
+
+.concat concatena dos arrays 
+
+.split("separador") a partir de una cadena crea un array 
+
+.join(separador) apartir del array crea una cadena separada por el separador 
+
+Busqueda ---------------------------------
+
+.includes(elemento) si incluye -> true o false
+.includes(elemento, desde) 
+
+.indexOf(elemento) devuelve la aparicion del elemento, si no devuelve -1
+
+.indexOf(elemento, desde) igual que el anterior pero desde...
+
+.lasIndexOf(elemento) buca elemento pero en su ultima aparicion, si no -1 
+
+.lasIndexOf(elemento, desde) busca el elemento desde el final hasta la posicion desde 
+
+Modificar --------------------------------
+
+.slice(inicio, fin) devuelve un array con los elementos desde el inicio hasta el final.
+ 
+.splice(inicio, cantidad) Elimina desde inico hasta la cantidad
+
+.splice(inicio, cantidad, elemento1, elemento2) elimina elementos desde el inico e introduc elem...1 y elemento2
+
+.copyWithin(posicion, inicio, fin) modifica el array y copia desde inicio a fin
+
+.fill(elementos, inicio, fin) modifica los elementos desde el inicio a fin. 
+
+Copiaar el Array 
+arr.copyWithin(tarjet[, start[, end]])
+
+Ordenar elementos de un Array ------------
+
+.reverse() Invierte los elementos del array 
+.sort() Ordena el array alfabeticamente 
+.sort(critero) ordena segun el criterio
+
+Buscar elementos de un Array -------------
+
+se borra pero no la posicion;
+delete arr[5];
+
+para elimianar la longitud
+.splice(indice, numero de elemento a elimianr)
+
+Recorrer el vector -----------------------
+
+for clasico 
+while 
+
+for in y for of 
+
+forEach(funcion(elemento,indice, array))
+
+Comprobar los elementos de un Array-------
+
+.every(funcion(elemento)) verifica si todos
+.some(funcion(elemento)) verifica si alguno 
+
+Transformar y filtrar arrays -------------
+
+.map(funcion(elemento)) devuelve un  array con los elementos true 
+
+.filter(funcion(elemento)) devuelve un array con los elementos true 
+
+Buscar elementos en un Array atravez de una funcion ------------------------------
+
+.find(funcion(elemento)) Devuelve el primer elemento del array que cumple la condicion 
+
+.findIndex(funcion(elemento)) devuelve el primer elemento que comple con la funcion
+
+.findLast(funcion(elemento)) devuelve el ultimo elemento que comple con la funcion
+
+.findLastIndex(funcion(elemento)) Devuelve el ultimo con la condicion
+
+Acomular Valores de un Array -------------
+
+.reduce(funcion(acumulador, elemento)) devuelve un acumulador despues de operar con los elementos
+
+.reduceRight(funcion(acumulador)) funciona igual si no que desde el final 
+
+DesEstructurarArrays ---------------------
+
+const = numeros[1, 2, 3]
+
+const [primerNumero, segundoNumero, tercerNumero] = numeros;
+
+Array Multidimensional -------------------
+
+se define como array anidados 
+
+const matriz = [[1,2,3],[4,5,6],[7,8,9]]
+
+matriz[1][1] // 5
+
+para recorrerla se usan bluces anidados 
+
+🔥 Resumen Rápido-----------------------
+
+Modificar: .push(), .pop(), .unshift(), .shift(), .splice(), .sort(), .reverse()
+
+Buscar: .indexOf(), .includes(), .find(), .findIndex()
+
+Recorrer: .forEach(), .map(), .filter(), .reduce()
+
+Combinar: .concat(), .join(), .slice()
+
+Ordenar: .sort(), .reverse()

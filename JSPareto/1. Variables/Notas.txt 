@@ -1,0 +1,44 @@
+Variables:
+
+Podemos usar let y const.
+
+ - let son variables 
+ - const son constantes no se puedesn cambiar 
+
+Tipos de variables:
+
+String //Texto 
+Number // Numeros 
+Boolean // verdadero falso 
+Array // Lista de datos [1, 2, 3]
+Objet // Objeto con vatias propiedades {nombre: "Juan", edad: 22 }
+
+Ejercicios -------------------------------
+
+💡 Ejercicios Prácticos
+
+✏️ Ejercicio 1: Declarar Variables
+
+Crea una variable nombre con tu nombre.
+Crea una variable edad con tu edad.
+Crea una variable esEstudiante con true o false, según si eres estudiante.
+Muestra los valores en la consola con console.log().
+
+
+✏️ Ejercicio 2: Diferencia entre let y const
+
+Crea una variable ciudad con let y asígnale una ciudad.
+Cámbiale el valor a otra ciudad.
+Crea una variable pais con const y asígnale un país.
+Intenta cambiar su valor y observa qué pasa.
+
+
+✏️ Ejercicio 3: Tipos de Datos
+
+Crea una variable precio con un número.
+Crea una variable producto con un texto.
+Crea una variable disponible con un valor booleano (true o false).
+Crea una variable colores con una lista de 3 colores.
+Crea una variable usuario con un objeto que tenga nombre y edad.
+Muestra todos los valores con console.log().
+
