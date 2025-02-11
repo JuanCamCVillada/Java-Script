@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        //Ejercicio 1: 
+        let coche = {
+            marca: "BMW",
+            modelo: "X1",
+            year: "2025"
+        }
+
+            //Claves 
+        let claves = Object.keys(coche);
+        console.log(claves)
+
+        //Ejericio 2
+        let usuario ={
+            nombre: "Juan Camilo", 
+            edad: 22,
+            email: "JuanVillada5501@gmail.com"
+        }
+
+            //Valores
+        let valores = Object.values(usuario)
+        console.log(valores)
+
+        //Ejercicio 3
+
+        let producto ={
+            nombre: "iPhone15", 
+            precio: 1_000,
+            stock: 10
+        }
+
+            //extraer el clave producto en array 
+        let entradasProducto = Object.entries(producto)
+
+        console.log(entradasProducto)
+
+        entradasProducto.forEach((entrada) =>console.log(entrada[0]+": "+entrada[1]))
+
+    </Script>
+    
+</body>
+</html>

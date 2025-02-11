@@ -1,0 +1,53 @@
+Objetos: -----------------------------------------
+
+Es una estructura que almacena Clave-Valor 
+let persona = {
+    nombre: "Juan Camilo",
+    edad: 22,
+    ciudad: Rionegro
+}
+
+para acceder a un valor usamos punto o corchetes
+
+persona.nombre
+persona["edad"];
+
+para modificar los valores: 
+persona.edad = 23;
+
+agregar una nueva clave: 
+persona.profesion = "Desarrolador";
+
+para obtener las claves en vez del valor:---------
+.keys();
+
+let claves = Object.keys(persona);
+console.log(claves) // ["nombre", "edad", "ciudad"];
+
+Devolver la Clave y el Valor: --------------------
+Object.entries() 
+
+let entradas = Object.entries(persona)
+
+console.log(entradas) //[nombre: "Juan Camilo"],
+                        [edad: 22],
+                        [ciudad: Rionegro]
+
+Ejercicios: --------------------------------------
+
+✏️ Ejercicio 1: Obtener las claves de un objeto
+
+Crea un objeto coche con las claves: marca, modelo, año.
+Usa Object.keys() para obtener sus claves.
+
+
+✏️ Ejercicio 2: Obtener los valores de un objeto
+
+Crea un objeto usuario con nombre, email y edad.
+Usa Object.values() para obtener los valores.
+
+
+✏️ Ejercicio 3: Convertir un objeto en un array de pares clave-valor
+
+Crea un objeto producto con nombre, precio y stock.
+Usa Object.entries() y recorre los pares con forEach().
