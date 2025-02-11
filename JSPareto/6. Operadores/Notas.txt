@@ -1,0 +1,92 @@
+Operadores importantes (??, ?., ternario ? : )
+
+
+ Nullish Coalescing: -----------------------------
+ ?? para asignar un valor cuando la variable es null o undefined.
+    let nombre = null;
+    let usuario = nombre ?? "Invitado";
+    (Si nombre es null se asignara invitado)
+
+    Se diferencia de || que tambien asigna valores por defecto solo que este considera: false, 0, "" (Strings Vacios);
+
+    let puntos = 0; 
+    console.log(puntos || 100 ) // 100 ❌ (porque `0` es "falsy")
+
+    console.log(puntos ?? 100) // 0 ✅ (porque `0` es un valor válido)
+
+Operador de Encadenamiento Opcional: -------------
+
+? Evita errores cuando accedemos a propiedades del obejeto que son undefined o null:
+
+    let usuario = {}
+    console.log(usuario.direccion.calle) // ❌ ERROR: No se puede leer 'calle' de undefined
+
+Ejemplo Con ?
+    let usuario ={}
+    console.log(usuario.direccion?.calle) ✅ Si direccion no existe, devuelve undefined en vez de fallar.
+
+Uso en FUNCIONES: 
+
+    let persona = {nombre: "Juan"}
+    console.log(personasaludar?.()))// ✅ No hay error, solo devuelve undefined, Si saludar no existe, simplemente devuelve undefined en vez de fallar.
+
+Operador Ternario: -------------------------------
+
+permite escribir condiciones if/else en una sola linea de codigo
+
+    let edad = 22
+    let mensaje = edad >= 18 ? "Eres mayor de Edad" : "Eres menor de edad";
+
+    console.log(mensaje) // Eres mayor de edad
+
+✅ Si la condición (edad >= 18) es verdadera, toma el valor antes de :. Si es falsa, toma el valor después de :.
+
+🔹 Ejemplo con más condiciones
+     
+    let puntuacion = 85;
+    let resultado = puntuacion >= 90 ? "Excelente" : puntuacion >= 70 ? "Aprobado" : "Reprobado";
+
+    console.log(resultado);  // "Aprobado"
+
+--------------------------------------------------
+
+📌 Resumen
+
+✅ ?? → Usa un valor por defecto solo si la variable es null o undefined.
+✅ ?. → Evita errores al acceder a propiedades de objetos que pueden no existir.
+✅ ? : → Condiciones en una sola línea, ideal para asignaciones rápidas.
+
+
+Ejercicios: --------------------------------------
+
+
+📌 Ejercicio 1: Uso de ?? (Nullish Coalescing)
+
+Completa la función para que asigne un valor por defecto si el nombre del usuario es null o undefined.
+
+
+
+📌 Ejercicio 2: Uso de ?. (Encadenamiento Opcional)
+
+Dado un objeto de usuario, completa la función para que retorne la calle de su dirección.
+Si la dirección no existe, debe devolver "Dirección no disponible", sin generar errores.
+
+
+
+📌 Ejercicio 3: Uso del operador ternario (? :)
+
+Crea una función que determine el precio de una entrada al cine según la edad del usuario.
+
+🔹 Menores de 12 años → $5.000
+🔹 Entre 12 y 64 años → $10.000
+🔹 Mayores de 64 años → $7.000
+
+
+
+📌 Ejercicio 4: Combinación de ??, ?. y ? :
+Crea una función que reciba un objeto de usuario y determine si tiene acceso a un sistema.
+
+🔹 Si el usuario es null o undefined, devuelve "Usuario desconocido".
+🔹 Si el usuario no tiene un rol definido, devuelve "Acceso restringido".
+🔹 Si el rol es "admin", devuelve "Acceso total"; si es "usuario", devuelve "Acceso limitado"; de lo contrario, "Acceso denegado".
+

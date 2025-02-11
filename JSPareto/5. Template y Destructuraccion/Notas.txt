@@ -1,0 +1,49 @@
+Templates Literales: backtick Comillas invertidas  
+
+¿Qué cambia?
+Puedes insertar variables dentro de la cadena usando ${}.
+No necesitas concatenar con +.
+
+let nombre = "Juan";
+let edad = 25;
+
+// Usando template literals
+let mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
+
+console.log(mensaje);
+
+
+Destrucuturacion de Objetos y Arrays: ------------
+
+la Destrucuturacion permite extraer valores de una forma rapida de algun objeto o array de manera sencilla. 
+
+
+Objetos - - - - - - - - - - - - - - - - - -
+let persona ={
+    nombre:"Juan Camilo",
+    edad: 22,
+    cuidad: "Rionegro"
+}
+
+let {nombre, edad, cuidad} = persona; 
+
+console.log(nombre) // Juan Camilo
+console.log(edad) // 22
+console.log(cuidad) // Rionegro
+
+
+Arrays:  - - - - - - - - - - - - - - - - - -
+
+let numeros = [10, 20, 30]
+
+let [primero, segundo, tercero] = numeros
+
+console.log(primero);  // 10
+console.log(segundo);  // 20
+console.log(tercero);  // 30
+
+
+Ejercicios 
+
+Ejercicio de práctica 🎯
+Escribe una función que reciba un objeto con datos de una persona y devuelva un mensaje con template literals y desestructuración.

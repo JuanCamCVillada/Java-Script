@@ -7,7 +7,7 @@ let frutas = ["Arandanos", "Durazno", "Mango"];
 para acceder al inidce usamos: 
 frutas[0] // "Arandanos"
 
-podemos rea asignar valores: 
+podemos re-asignar valores: 
 frutas[0] = "peach"
 
 Metodos Claves en los Array:--------------
