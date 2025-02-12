@@ -1,0 +1,57 @@
+document.querySelector() vs document.getElementById()
+
+document.getElementById()________________________
+Selecciona un elemento por sua "id"
+Busca de manera mas rapida el elemento. 
+si no existe devuelve null 
+
+ejemplo: -----
+
+<p id = "mensaje"> Hola mundo</p>
+
+<script>
+    let parrafo = document.getElementById("mensaje")
+
+    console.log(parrafo) //  <p id="mensaje">¡Hola, mundo!</p>
+</script>
+
+ducument.querySelector("Selector") _____________
+
+mas flexible, selecciona por: 
+    #id 
+    .clase
+    etiqueta
+Devuelve el primero que coincida 
+
+ejemplo: -----
+
+<p class="parrafo">¡Hola, mundo!</p>
+<p class="parrafo">Otro párrafo</p>
+
+<script>
+    let primerParrafo = document.querySelector(".parrafo");
+    console.log(primerParrafo); // <p class="parrafo">¡Hola, mundo!</p>
+</script>
+
+Ejercicios ---------------------------------------
+
+Ejercicio 1: Cambiar el texto de un elemento con getElementById
+
+➡ Instrucciones:
+Usa getElementById() para seleccionar el h1.
+Cámbiale el texto con innerText.
+
+---
+
+Ejercicio 2: Cambiar el color de un párrafo con querySelector
+➡ Instrucciones:
+
+Usa querySelector() para seleccionar el párrafo.
+Cámbiale el color con style.color.
+
+--- 
+Ejercicio 3: Seleccionar múltiples elementos con querySelectorAll
+➡ Instrucciones:
+
+Usa querySelectorAll() para seleccionar todos los elementos .item.
+Recorre los elementos y cambia su color con forEach().

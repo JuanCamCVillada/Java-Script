@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo">Hola Este texto Cambiara</p>
+    <hr>
+    <div>
+        <p class="texto">Cambiara el color del texto</p>
+        <button onclick="cambiar()">Cambiar</button>
+    </div>
+    <hr>
+
+    <div>
+        <ul>
+            <li class="item">Elemento 1</li>
+            <li class="item">Elemento 2</li>
+            <li class="item">Elemento 3</li>
+        </ul>
+        <button onclick="resaltarElementos()">Resaltar</button>
+    </div>
+
+    
+    <script>
+        // Ejercicio 1 ---
+
+        let titulo = document.getElementById("parrafo")
+
+        titulo.innerHTML = "Hola Cami"
+
+        //Ejercicios 2 --- 
+
+        function cambiar(){
+            let texto = document.querySelector(".texto")
+
+            texto.style.color = "teal"
+        }
+
+        //Ejercicio 3 
+        function resaltarElementos(){
+            let elemento = document.querySelectorAll(".item")
+
+            console.log(elemento)
+
+            elemento.forEach((item)=>{
+                item.style.backgroundColor = "tomato"
+            })
+        }
+
+
+
+    </script>
+</body>
+</html>
