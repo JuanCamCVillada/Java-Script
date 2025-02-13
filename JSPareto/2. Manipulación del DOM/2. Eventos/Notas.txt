@@ -1,0 +1,104 @@
+ Eventos en JavaScript (addEventListener, click, keydown)
+
+Un evento es cualquier interacción del usuario con la página:
+✅ Hacer clic en un botón.
+✅ Mover el mouse.
+✅ Presionar una tecla.
+✅ Cargar la página.
+
+Para que nuestro código reaccione a esos eventos, usamos event listeners (escuchadores de eventos).
+
+---
+addEventListener() // Escucha eventosd de un elemento, y ejecuta una funcion cuando ocurre. 
+sintaxis: 
+elemento.addEventListener("evento", funcion)
+
+evento: ("click", "keydown")
+
+--- Eventos Comunes 
+
+-- click: cuando el usuario hace click
+    
+    <button id="miBoton">Haz clic</button>
+
+    <script>
+        let boton = document.getElementById("miBoton);
+
+        boton.addEventListener("click", function(){
+            alert("Boton Clickeado");
+        }) 
+    </script>
+
+
+-- keydown 
+
+   <input type="text" id="campoTexto" placeholder="Escribe algo">
+
+    <script>
+        let input = document.getElementById("campoTexto");
+
+        input.addEventListener("keydown", function(evento){
+            console.log("Tecla precionada: " + evento.key )
+        })
+    </script>
+
+        Explicacion: 
+        - Capturamos el input 
+        - Escuchamos cuando el usuario preciona una tecla
+        - Mostramos la tecla que presiono  
+
+-- mouseover: Cuando el mause pasa sobre un elemento. 
+
+    <p id ="parrafo">Pasa el mouse sobre este texto</p>
+
+    <script>
+        let parrafo = document.getElementById("parrafo");
+
+        parrafo.addEventListener("mouseover", function(){
+            parrafo.style.color = "blue"; //cambia el color al pasar el mouse
+        })
+
+        parrafo.addEventListener("mosueout", funcion(){
+            parrafo.style.color = "black"; //vuelve al color original; 
+        })
+    </script>
+
+    usando funcines flecha 
+
+    <script>
+
+    let parrafo = document.getElementById("parrafo")
+
+    parrafo.mouseover = () => {parrafo.style.color = "blue"}
+
+    parrafo.mouseout = () => {parrafo.style.color = "black"}
+
+    </script>
+
+1️⃣ mouseover: cambia el color al pasar el mouse.
+2️⃣ mouseout: restaura el color cuando el mouse sale.
+ 
+ ------------------------------------------------
+
+Ejercicios. 
+
+Ejercicio 1: Contador de clics
+➡ Instrucciones:
+
+Crea un botón con el texto "Haz clic".
+Cada vez que el usuario haga clic, el número de clics aumentará.
+
+
+Ejercicio 2: Detectar teclas presionadas
+➡ Instrucciones:
+
+Crea un input de texto.
+Muestra en pantalla cada tecla que el usuario presione.
+
+Ejercicio 3: Cambiar el fondo con el teclado
+➡ Instrucciones:
+
+Si el usuario presiona "r", el fondo se pone rojo.
+Si presiona "g", el fondo se pone verde.
+Si presiona "b", el fondo se pone azul.
+

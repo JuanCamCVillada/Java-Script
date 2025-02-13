@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejericicio 1  -->
+    <p id="pantalla">0</p>   
+    <button id="button">Agregar</button>
+    <hr>
+
+    <!-- Ejercicio 2 -->
+    <input type="text" id="campoTexto" placeholder="Ingresa una texto">
+    <p id="pantalla1"></p>   
+    <hr>
+
+    <!-- Ejericicio 3 -->
+    <p>Presiona "r" para rojo, "g" para verde, "b" para azul.</p>
+
+
+    <div id="cuadrado" style="width: 200px; height: 200px; background-color: black;"></div>
+
+     <script>
+
+        // Ejercicio 1 
+        let pantalla = document.getElementById("pantalla");
+
+        let button = document.getElementById("button")
+
+        let contador = 0; 
+
+
+        button.addEventListener("click", function(){
+            contador++;
+            pantalla.innerHTML = contador;
+        })
+
+        // -----------------------------------
+
+        // Ejercicio 2
+
+        let input = document.getElementById("campoTexto");
+
+        let pantalla1 = document.getElementById("pantalla1")
+        
+        input.addEventListener("keydown", function(evento){
+            pantalla1.innerHTML = `Tecla presinada: ${evento.key}`
+        })
+
+        // -----------------------------------
+
+        // Ejercicio 3
+        let cuadrado = document.getElementById("cuadrado")
+
+        document.addEventListener("keydown", function(evento){
+            if(evento.key === "r"){
+                cuadrado.style.backgroundColor = "red";
+            }else if(evento.key === "g"){
+                cuadrado.style.background = "green"
+            }else if(evento.key === "b"){
+                cuadrado.style.background = "blue"
+            }
+        })
+
+
+
+     </script>
+
+
+</body>
+</html>
