@@ -1,0 +1,35 @@
+Modificar elementos del DOM ------------
+
+innerHTML - Modifica el contenido del HTML ------
+
+permite insertar etiquetas dentro del HTML 
+    let caja = document.getElementById("caja")
+
+    caja.innerHTML = "<strong>¡Hola, mundo!</strong>";
+
+textContent - Modifica Solo el texto -----
+
+Solo manipula el texto plano: 
+
+    let mensaje = document.getElementById("mensaje") 
+
+    mensaje.textContent = "<strong>Hola, mundo!</strong>";  // Se mostrará tal cual, sin negrita.
+
+classList.add() / classList.remove() - Agrega o quita Clases del CSS 
+
+    let  caja = document.getElementById("caja");
+
+    //Agregar una clase 
+    caja.classList.add("resaltado")
+
+    //Quitar una Clases
+    caja.classList.remove("remove")
+
+Ejercicios prácticos ---------------------------
+
+Ejercicio 1️ – Cambia el texto de un párrafo con innerHTML y textContent
+
+📌 Objetivo: Al hacer clic en un botón, cambiar el texto de un párrafo.
+
+Ejercicio 2️ – Agrega o quita una clase con classList.add/remove
+📌 Objetivo: Cambiar el color de una caja al hacer clic en un botón.
