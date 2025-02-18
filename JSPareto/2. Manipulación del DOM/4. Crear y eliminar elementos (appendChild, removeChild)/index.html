@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="contenedor">
+
+        </div>
+
+
+        <button onclick="cambiarTexto()">Cambiar texto</button>
+    </div><hr>
+
+    <div>
+        <ul id="contenedorLista">
+        </ul>
+
+        <button id="agregar">Agregar</button>
+        <button id="eliminar">Eliminar</button>
+    </div>
+    
+    <script>
+        // Ejercicio 1 
+        function cambiarTexto(){
+            let contenedor = document.getElementById("contenedor")
+
+            let parrafoNuevo = document.createElement("p")
+
+            parrafoNuevo.textContent = "Soy un nuevo párrafo agregado dinámicamente."
+
+            contenedor.appendChild(parrafoNuevo)
+        }
+
+        // Ejercicio 2 
+
+        let ul = document.getElementById("contenedorLista")
+        let agregar = document.getElementById("agregar")
+        let eliminar = document.getElementById("eliminar")
+
+        agregar.addEventListener("click", function(){
+            let nuevoitem = document.createElement("li")
+            nuevoitem.textContent = "Nuevo elemento"
+            ul.appendChild(nuevoitem)
+        })
+
+        eliminar.addEventListener("click", function(){
+            if(ul.lastChild){
+                ul.removeChild(ul.lastChild)
+            }
+
+        })
+
+
+    </script>
+</body>
+</html>

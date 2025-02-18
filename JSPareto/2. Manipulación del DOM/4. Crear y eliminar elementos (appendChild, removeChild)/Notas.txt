@@ -1,0 +1,73 @@
+Crear nuevos Elementos Create Element y Append Child -------
+
+usamos .createElement("tag") para Crear un nuevo elemento 
+
+agregamos contenido con innerHTML o textContent 
+
+insertamos elementos con appendChild()
+
+tenemos un elemento contenedor lo recuperamos con:
+let contenedor = document.getElementById("Contenedor")
+
+cramos el elemento p:
+let nuevoParrafo = document.createElement("p")
+
+agregamos el contenido:
+nuevoParrafo.textContent = "Soy un nuevo párrafo agregado dinámicamente.";
+
+insertar un nuevo parrafo: 
+contenedor.appendChild(nuevoParrafo)
+
+Eliminar un elemento con RemoveChild ---------
+
+para eliminar necesitamos un elemento padre
+
+usar removeChild(elemento) para eliminarlo.
+
+Ejemplo -----
+
+let contenedor = document.getElementById("contenedor")
+let parrafoElim = document.getElementById("parrafo")
+
+elemento a elimiar 
+contenedor.removeChild(parrafoElim);
+
+Ejercicios Practicos --------------------------------------
+Ejercicios -----
+
+Ejercicio 1:
+
+ Agregar un botón que cree elementos dinámicamente
+📌 Objetivo: Cada vez que hagas clic en el botón, se agregará un nuevo párrafo dentro de un div.
+
+Ejercicio 2️:
+
+Agregar y eliminar elementos dinámicamente
+📌 Objetivo: Un botón agregará un li a una lista, y otro botón eliminará el último li.
+
+Ejercicio 3️⃣ – Crear un sistema de tareas
+📌 Objetivo: Permitir al usuario agregar tareas y eliminarlas al hacer clic en ellas.
+
+<input type="text" id="tarea" placeholder="Escribe una tarea">
+<button id="btnAgregar">Agregar Tarea</button>
+<ul id="listaTareas"></ul>
+
+
+let btnAgregar = document.getElementById("btnAgregar");
+let listaTareas = document.getElementById("listaTareas");
+
+btnAgregar.addEventListener("click", function() {
+    let inputTarea = document.getElementById("tarea");
+    if (inputTarea.value.trim() !== "") {
+        let nuevaTarea = document.createElement("li");
+        nuevaTarea.textContent = inputTarea.value;
+        
+        // Agregar evento para eliminar la tarea al hacer clic
+        nuevaTarea.addEventListener("click", function() {
+            listaTareas.removeChild(nuevaTarea);
+        });
+
+        listaTareas.appendChild(nuevaTarea);
+        inputTarea.value = ""; // Limpiar el input
+    }
+});
