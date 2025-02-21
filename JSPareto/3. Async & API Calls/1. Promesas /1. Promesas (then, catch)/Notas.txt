@@ -1,0 +1,69 @@
+las promesas son operaciones asincronas, representa un valor que no esta dispoible, pero en algun momento lo estara o fallara. 
+
+then() -> Se ejecuta cuando la promesa se resuelve correctamente. 
+
+catch() -> Se ejecuta si la promesa falla.
+
+📌 Estados de una promesa:
+✅ Pending (pendiente) → Aún no se ha resuelto ni rechazado.
+✅ Fulfilled (resuelta) → Se completó con éxito.
+✅ Rejected (rechazada) → Ocurrió un error.
+
+
+Simulacion de una promesa. 
+
+let promesa = new Promise((resolve,reject) => {
+    let exito = true;
+    setTimeout(()=>{
+        if(exito){
+            resolve ("Promesa Cumplida)
+        }else{
+            reject("promesa rechazada)
+        }
+    }, 2000 ); //simula una espera de 2 seg 
+});
+
+// Manejo de la promesa
+promesa
+    .then((mensaje) => console.log(mensaje)) // Se ejecuta si todo va bien
+    .catch((error) => console.log(error)); // Se ejecuta si algo falla
+
+    🔹 📌 Nota: setTimeout simula una operación que tarda en completarse.
+
+Fetch + then / catch -----------------------
+usaremos Fetch para pedir a una API
+
+fecth("https://jsonplaceholder.typicode.com/posts/1")
+    .then((respuesta) => respuesta.json())
+    .then(datos) => console.log("Datos Recibidos: " , datos)
+    .then((error) => console.log("Ocurrio un Error: ", error ))
+
+fetch(url) -> hace la solicitud 
+.then(respuesta.json()) -> Convierte la respuesta en un objeto usable 
+.catch(error) -> captura el error en red 
+
+Ejercicios: -----------------------------------------------
+
+
+Ejercicio 1️ – Simular un pedido de comida
+
+📌 Objetivo: Crear una promesa que tarde 3 segundos en completarse y devuelva "Tu comida está lista".
+
+📌 Pasos:
+
+Crea una función pedirComida().
+Usa setTimeout() para simular la espera.
+Si true, devuelve "Tu comida está lista".
+Si false, lanza un error "No hay ingredientes disponibles".
+-----------------------------------------------
+
+
+Ejercicio 2️ – Hacer una solicitud a una API
+📌 Objetivo: Obtener datos de usuarios desde la API https://jsonplaceholder.typicode.com/users y mostrarlos en consola.
+
+📌 Pasos:
+
+Usa fetch().
+Convierte la respuesta en JSON.
+Muestra los nombres de los usuarios.
+Captura errores con .catch().

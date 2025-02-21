@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Ejercicio 1 
+        var pedido = new Promise(function(resolve, reject){
+            var exito = true; 
+            setTimeout(function(){
+                if(exito){
+                    resolve("Tu comida está lista")
+                }else{
+                    reject("No hay ingredientes disponibles")
+                }
+            },3000)
+        })
+
+
+        // manejamos la promesa 
+        pedido.then(function(mensaje){
+            console.log(mensaje);
+        }).catch(function(error){
+            console.log(error)
+        })
+
+        // Ejercicio 2 
+        console.log("Datos de Una API")
+
+        console.log("Datos de Una API");
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(function(respuesta) {
+                return respuesta.json();
+            })
+            .then(function(datos) {
+                console.log("Datos recibidos", datos);
+            })
+            .catch(function(error) {
+                console.log("Ocurrió un error", error);
+            });
+
+
+        
+    </script>
+    
+</body>
+</html>
