@@ -7,7 +7,65 @@
 </head>
 <body>
     <script>
+        // Ejercicio 1 
+
+        function pedirPizza(){
+            return new Promise(function (resolve){
+                setTimeout(() => {
+                    resolve("🍕 Tu pizza está lista")
+                }, 5000);
+
+            })
+        }
+
+        async function ordenar() {
+            console.log("⏳ Esperando la pizza...");
+            var resultado  = await pedirPizza();
+            console.log(resultado)
+        }
+
+        ordenar()
         
+    </script>
+
+    <!-- <script> 
+        // Mas corto. 
+        async function pedirPizza() {
+            await new Promise(resolve => setTimeout(resolve, 500)); // Espera 500ms
+            return "🍕 Tu pizza está lista"; // Retorna el mensaje
+        }
+
+        async function ordenar() {
+            console.log("⏳ Esperando la pizza..."); 
+            console.log(await pedirPizza()); // Espera la pizza y la muestra en una línea
+        }
+
+        ordenar(); // Ejecuta el pedido de la pizza
+    </script> -->
+    
+    <script>
+        async function obtenerUsuario() {
+            try {
+                // Hacer la petición a la API
+                const respuesta = await fetch("https://jsonplaceholder.typicode.com/users");
+    
+                // Verificar si la respuesta es exitosa
+                if (!respuesta.ok) {
+                    throw new Error(`HTTP Error! Status: ${respuesta.status}`);
+                }
+    
+                // Convertir la respuesta a JSON
+                const usuarios = await respuesta.json();
+    
+                // Mostrar todos los usuarios o solo el primero
+                console.log("Usuarios obtenidos:", usuarios);
+                console.log("Primer usuario:", usuarios[0]); // Muestra solo el primero
+            } catch (error) {
+                console.error("Ocurrió un error:", error);
+            }
+        }
+    
+        obtenerUsuario(); // Llamar la función para ejecutarla
     </script>
     
 </body>
