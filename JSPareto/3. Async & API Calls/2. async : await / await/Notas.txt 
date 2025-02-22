@@ -1,0 +1,79 @@
+Async / Await
+
+ async → Convierte una función en asíncrona, permitiendo usar await dentro de ella.
+ await → Espera a que una promesa se resuelva, sin usar .then().
+ Hace que el código sea más fácil de leer y entender.
+
+ funtion esperar (){
+    return new promise(function(resolve){
+        SetTimeout(function(){
+            resolve(espera perminada)
+        },3000)
+    })
+ }
+
+ async function ejecutar(){
+    console.log("Esperando")
+    var resultado = await esperar()
+    console.log(resultado)
+ }
+
+ ejecutar();
+
+ Obtener Datos de una API con async / await
+
+ async function ObtenerUsuario(){
+    try{
+        var respuesta = await fetch("https://jsonplaceholder.typicode.com/users/1");
+        var usuario = await respuesta.json()
+        console.log("👤 Usuario obtenido:", usuario);
+    }catch{
+        console.log("❌ Ocurrió un error:", error);
+    }
+ }
+
+ ObtenerUsuario();
+-----------------------------------------------
+ Obterner multiples datos en Orden ------------
+
+ async function obtenerPosts() {
+    try {
+        var post1 = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        var datos1 = await post1.json();
+        console.log("📄 Post 1:", datos1);
+
+        var post2 = await fetch("https://jsonplaceholder.typicode.com/posts/2");
+        var datos2 = await post2.json();
+        console.log("📄 Post 2:", datos2);
+    } catch (error) {
+        console.log("❌ Error al obtener posts:", error);
+    }
+}
+
+obtenerPosts();
+
+-----------------------------------------------
+
+Ejercicio 1️ - Simular un Pedido de Pizza
+
+📌 Objetivo: Crear una función pedirPizza() que tarde 5 segundos en completarse y devuelva "🍕 Tu pizza está lista".
+
+📌 Pasos:
+
+Crea una función pedirPizza() que devuelva una promesa.
+Dentro de setTimeout(), usa resolve("🍕 Tu pizza está lista").
+Crea una función hacerPedido() que use await pedirPizza().
+Imprime "⏳ Esperando la pizza..." antes de await.
+Imprime el resultado cuando la pizza esté lista.
+
+-----------------------------------------------
+
+Ejercicio 2️⃣ - Obtener una Lista de Usuarios
+📌 Objetivo: Obtener la lista de usuarios desde https://jsonplaceholder.typicode.com/users y mostrar solo sus nombres.
+
+📌 Pasos:
+
+Usa fetch() dentro de una función async.
+Convierte la respuesta en JSON.
+Muestra los nombres de los usuarios en la consola.
+Maneja errores con try/catch.
