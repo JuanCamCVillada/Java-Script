@@ -1,0 +1,102 @@
+FETCH la puerta de datos. ---------------------
+
+- Nos permite obtner en tiempo real datos desde otros servidores
+- Es la base para trabajar con APIS 
+- funciona con promesas asi que de debe de trabajar con funciones asincronas. 
+
+PETICION GET PARA OBTENER DATOS: -----------
+
+GET: Solo para ver datos de un servidor 
+
+fetch(""https://jsonplaceholder.typicode.com/todos/1"")
+    .then(function(respuesta(){
+        return respuesta.json();
+    })
+    .then(function(datos){
+        console.log("tarea Recibida: ", datos)
+    })
+    .catch(funtion(error){
+        console.log("ocurrio un error", error)
+    })
+
+    xplicación paso a paso:
+    1️ fetch(url) hace la petición a la API.
+    2️ .then(respuesta => respuesta.json()) convierte la respuesta a JSON.
+    3️ .then(datos => console.log(datos)) muestra los datos.
+    4️ .catch(error => console.log(error)) maneja errores.
+
+-----------------------------------------------
+
+2. HACER UNA PETICION MAS MODERNA CON ASYNC Y AWAIT (MAS MODERNA Y CLARA)
+
+async function obtenerTarea(){
+    try{
+        var respuesta = awayt fetch("https://jsonplaceholder.typicode.com/todos/1")
+        var datos = await respuesta.json();
+        console.log("Tarea Obtenida: " , datos )
+    }catch(error){
+        console.log("Ocurrio un eror: " , error)
+    }
+}
+
+obtenerTarea();
+
+-----------------------------------------------
+
+HACER UNA PETICION POST: (ENVIAR DATOS)
+
+async function crearTarea(){
+    try{
+        var respuesta = await fetch("https://jsonplaceholder.typicode.com/todos",{
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: "aprender java",
+                completed: false
+            })
+        })
+
+        var datos = await respuesta.json();
+        console.log("Tarea Completada" , datos)
+    }catch(error){
+        console.log("Eror al crear la tarea" , error )
+    }
+}
+
+crearTarea();
+
+-----
+
+ Explicación:
+
+"method": "POST" → Indicamos que estamos enviando datos.
+"headers" → Especificamos que los datos son JSON.
+"body": JSON.stringify({...}) → Convertimos el objeto en JSO
+
+-----------------------------------------------
+
+Ejercicio 1️ - Obtener Usuarios de una API
+
+
+📌 Objetivo: Obtener la lista de usuarios desde https://jsonplaceholder.typicode.com/users y mostrar sus nombres en consola.
+
+📌 Pasos:
+1️⃣ Usa fetch() dentro de una función async.
+2️⃣ Convierte la respuesta en JSON.
+3️⃣ Muestra los nombres de los usuarios en consola.
+4️⃣ Maneja errores con try/catch.
+
+-----------------------------------------------
+Ejercicio 2️ - Crear un Nuevo Post
+
+
+📌 Objetivo: Enviar un POST a https://jsonplaceholder.typicode.com/posts con un título y cuerpo de texto.
+
+📌 Pasos:
+1️⃣ Usa fetch() con el método POST.
+2️⃣ Agrega un objeto con "title" y "body".
+3️⃣ Convierte la respuesta a JSON y muéstrala.
+4️⃣ Maneja errores con try/catch.
+
