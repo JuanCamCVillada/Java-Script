@@ -6,16 +6,55 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola Mundo</h1>
-
     <script>
-        fetch().then(function(){
+        // Ejercicio 2 
+        async function obtenerUsuario(){
+            try{
+                var resueta = await fetch("https://jsonplaceholder.typicode.com/users")
+                var datos = await respuesta.json();
 
-        }).then(function(){
+                console.log("Lista de Usuarios: ")
 
-        }).catch(function(){
+                datos.foreach(function(usuario){
+                    console.log(usuario.name)
+                })
 
-        })
+            }catch(erorr){
+                console.log("Error al obtener los datos. ")
+            }
+        }
+
+        // Llamamos la funcion 
+
+        obtenerUsuario();
+
+        // Ejercicio 2
+
+        async function crearPost() {
+            try{
+                var respuesta = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        title: "Aprendiendo Fetch",
+                        body: "Este es un post de prueba creado con fetch y JavaScript."
+                    })
+                });
+
+                var datos = await respuesta.json();
+                console.log("Post Creado Exitosamente. ")
+
+            }catch(error){
+                console.log("Error al crear el Post: ", error)
+            }
+            
+        }
+
+        // Llamamos la funcion. 
+        crearPost();
+        
 
     </script>
 </body>
