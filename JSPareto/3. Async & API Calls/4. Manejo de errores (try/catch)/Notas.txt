@@ -1,0 +1,56 @@
+Manejo de errores (try/catch)
+
+En el mundo real, los errores son inevitables. Un servidor puede fallar, una API puede no responder o el usuario puede ingresar datos incorrectos. Para manejar los errores sin que el codigo se rompa usamos try/catch 
+
+Como funciona: 
+    try{
+        //Codigo que genera un error 
+    }catch(error){
+        // Codigo que se ejecuta si hay un error 
+    }
+
+    //Ejemplo 
+
+    try{
+        console.log(nombre)
+    }catch(error){
+        console.log("Ocurrio un error"  + error.message)
+    }   
+        //SALIDA: Ocurrió un error: nombre is not defined
+
+FINALLY: _-----------------------------------------_
+
+A veces, queremos que una acción ocurra sin importar si hubo error o no. Para eso usamos finally.
+
+    try {
+        console.log("⏳ Conectando a la base de datos...");
+        throw new Error("No se pudo conectar.");
+    } catch (error) {
+        console.log("❌ Error:", error.message);
+    } finally {
+        console.log("🔌 Cerrando conexión...");
+    }
+
+ Resumen: -----
+
+✅ try/catch evita que errores detengan el programa.
+✅ Podemos lanzar errores personalizados con throw new Error().
+✅ finally se ejecuta siempre, haya error o no.
+
+
+EJERICICIOS: -----------------
+
+Ejercicio 1️: 
+
+Corrige el error sin que el programa se detenga
+    try {
+    console.log(variableNoDefinida); // ⚠️ Esto genera un error
+    } catch (error) {
+        console.log("Se capturó un error:", error.message);
+    }
+    console.log("✅ El programa sigue funcionando.");
+
+------------------------
+Ejericicio 2:
+
+Crea una función calcularEdad que capture errores si el usuario ingresa datos inválidos.

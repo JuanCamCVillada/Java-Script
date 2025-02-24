@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Corrige el error sin que el programa se detenga
+        try {
+        console.log(variableNoDefinida); //Esto genera un error
+        } catch (error) {
+            console.log("Se capturó un error:", error.message);
+        }finally{
+            console.log("El programa sigue funcionando.");
+        }
+
+
+        //Ejericicio 2 
+
+        function calcularEdad(nacimiento) {
+            try {
+                if (typeof nacimiento !== "number") {
+                    throw new Error("Debes ingresar un número.");
+                }
+                let edad = 2024 - nacimiento;
+                return `Tienes ${edad} años.`;
+            } catch (error) {
+                return "⚠️ Error: " + error.message;
+            }
+        }
+
+        // Pruebas
+        console.log(calcularEdad(2002));  // ✅ "Tienes 26 años."
+        console.log(calcularEdad("hola")); // ⚠️ "Error: Debes ingresar un número."
+
+
+
+    </script>
+    
+</body>
+</html>
