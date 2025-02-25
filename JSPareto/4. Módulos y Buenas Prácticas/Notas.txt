@@ -1,0 +1,131 @@
+Por qué usar módulos en JavaScript?
+Cuando un proyecto crece, el código puede volverse difícil de mantener. En lugar de tener todo en un solo archivo, podemos dividirlo en módulos, organizando funciones y variables en archivos separados.
+
+
+Beneficios de usar módulos:
+
+- Mantiene el código limpio y organizado.
+- Permite reutilizar código en diferentes partes del proyecto.
+- Evita conflictos de nombres entre variables y funciones.
+
+
+Exportar e Importar Módulos: -----------------
+
+tenemos un módulo desde otro archivo: 
+//La exportamos. 
+    
+    // Exportar una función
+
+    export function saludar(nombre) {
+        return `Hola, ${nombre}!`;
+    }
+
+    // Exportar una constante
+
+    export const despedida = "¡Adiós!";
+
+En el archivo Main: 
+
+    // Importar la función y la constante desde saludos.js
+
+    import { saludar, despedida } from "./saludos.js";
+
+    console.log(saludar("Juan"));  // "Hola, Juan!"
+
+    console.log(despedida);  // "¡Adiós!"
+
+-------------------------------------
+Exportar e importar un módulo entero (export default)
+
+A veces queremos exportar solo una cosa por archivo, sin necesidad de escribir su nombre exacto al importarlo.
+
+📌 Archivo: calculadora.js:
+
+    export default function sumar(a, b) {
+        return a + b;
+    }   
+
+📌 Archivo: main.js: 
+
+// Importar la función por defecto (no requiere llaves {})
+import sumar from "./calculadora.js";
+
+console.log(sumar(5, 3)); // 8
+
+
+export default permite importar la función sin usar llaves {}.
+El nombre del import (sumar) puede cambiarse, ya que es el único exportado por defecto.
+
+---------------------------------
+
+Separar la lógica en funciones reutilizables
+
+En un proyecto real, no deberíamos mezclar toda la lógica en un solo archivo. Una buena práctica es tener archivos dedicados a cada función importante.
+
+📌 Ejemplo:
+🟢 operaciones.js (archivo con funciones matemáticas)
+
+    export function multiplicar(a, b) {
+        return a * b;
+    }
+
+    export function dividir(a, b) {
+        if (b === 0) {
+            throw new Error("No se puede dividir por cero.");
+        }
+        return a / b;
+    }
+
+🟢 app.js (archivo principal del proyecto)
+
+    import { multiplicar, dividir } from "./operaciones.js";
+
+    console.log(multiplicar(4, 5)); // 20
+    console.log(dividir(10, 2));    // 5
+---------------------------------------
+
+Buenas prácticas en nombres de variables y funciones
+
+Reglas básicas:
+✔️ Usa nombres descriptivos para funciones y variables.
+✔️ Usa camelCase (nombreCompleto, calcularTotal).
+✔️ No uses nombres muy genéricos (x, dato, cosas).
+
+---------------------------------------
+
+ EJERCICIOS
+
+Ejercicio 1: Crear y usar módulos
+📌 Objetivo: Separar funciones en módulos y usarlas en otro archivo.
+
+📌 Pasos:
+1️ Crea un archivo utils.js con dos funciones:
+mayusculas(texto): devuelve el texto en mayúsculas.
+
+longitud(texto): devuelve la cantidad de caracteres.
+
+2️ Crea un archivo main.js e importa las funciones.
+
+3️ Usa ambas funciones en console.log().
+
+----------------------------------------
+
+Ejercicio 2: Exportar un módulo por defecto
+📌 Objetivo: Usar export default para importar una función.
+
+📌 Pasos:
+1️ Crea un archivo numeros.js con la función esPar(numero), que devuelve true si el número es par.
+
+2️ Usa export default esPar.
+
+3️ Crea un archivo app.js, importa esPar y pruébalo con console.log().
+
+----------------------------------------
+
+Ejercicio 3: Manejar errores en un módulo
+📌 Objetivo: Crear un módulo que use try/catch para manejar errores.
+
+📌 Pasos:
+1️⃣ Crea calculos.js con la función dividir(a, b), que maneja errores si b === 0.
+2️⃣ Usa throw new Error("No se puede dividir por cero.") si b es 0.
+3️⃣ Importa la función en script.js y pruébala con números válidos e inválidos.
